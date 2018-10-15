@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jscore" %>
+<%@ include file="userheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,33 +16,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">Logo</a>
-
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="product1.html">products</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="Register.html">Register</a>
-    </li>
-<li class="nav-item">
-      <a class="nav-link" href="Login">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="cart1"><img src="resources/cart.jpg"  style="width:30px;height:30px;"></a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-link" href="perform_logout">Logout</a>
-    </li>
-     </ul>
-</nav>
-<br>
 <jscore:if test="${regresult}">
-<h1> Registration sucess</h1>
+<h1> Registration success</h1>
 </jscore:if>
 <div class="container">
               

@@ -1,5 +1,6 @@
 package com.sowmya.web2.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -56,6 +57,16 @@ SessionFactory sessionfactory;
 		session.close();
 return cartList;
 
+	}
+
+	@Override
+	public BigInteger noOfrows(String cartUser) {
+		Session session=sessionfactory.openSession();
+		Query query=session.createSQLQuery("select count(*) from Cart where cartUser=:cu");
+		query.setParameter("cu", cartUser);
+		BigInteger rows=(BigInteger)query.uniqueResult();
+		session.close();
+		return rows;
 	}
 }
 

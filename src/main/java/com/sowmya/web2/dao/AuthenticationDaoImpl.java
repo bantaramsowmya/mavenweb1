@@ -1,7 +1,4 @@
 package com.sowmya.web2.dao;
-
-
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -37,7 +34,7 @@ public class AuthenticationDaoImpl implements AuthenticationDao
 	{
 		Session session=sessionfactory.openSession();
 		Query query=session.createQuery("From Register where email=:em and passWord=:pwd");
-			query.setParameter("em", email).setParameter("pwd", passWord);
+		query.setParameter("em", email).setParameter("pwd", passWord);
 		Register register=(Register)query.uniqueResult();
 		if(register.getEmail()==email&&register.getPassWord()==passWord)
 		{

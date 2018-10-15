@@ -25,6 +25,7 @@ SessionFactory sessionFactory;
 		session.save(supplier);
 		Transaction transaction=session.beginTransaction();
 		transaction.commit();
+		session.close();
 		return false;
 	}
 	@Override
@@ -32,6 +33,7 @@ SessionFactory sessionFactory;
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Supplier");
 		List supplierList=query.list();
+		session.close();
 
 		return supplierList;
 	}
@@ -43,6 +45,7 @@ SessionFactory sessionFactory;
 		session.delete(supplier);
 		Transaction transaction=session.beginTransaction();
 		transaction.commit();
+		session.close();
 		return false;
 	}
 	@Override
@@ -50,6 +53,7 @@ SessionFactory sessionFactory;
 	{
 		Session session=sessionFactory.openSession();
 		Supplier supplier=(Supplier)session.get(Supplier.class, supplierId);
+		session.close();
 		return supplier;
 
 	}

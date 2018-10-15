@@ -25,6 +25,7 @@ SessionFactory sessionFactory;
 		session.save(category);
 		Transaction transaction=session.beginTransaction();
 		transaction.commit();
+		session.close();
 		return false;
 	}
 	@Override
@@ -32,6 +33,7 @@ SessionFactory sessionFactory;
 		Session session=sessionFactory.openSession();
 	Query query=session.createQuery("from Category");
 	List categoryList=query.list();
+	session.close();
 		return categoryList;
 	}
 	@Override
@@ -56,6 +58,7 @@ SessionFactory sessionFactory;
 	public Category editCategory(int categoryId) {
 		Session session=sessionFactory.openSession();
 		Category category=(Category)session.get(Category.class, categoryId);
+		session.close();
 		return category;
 	}
 

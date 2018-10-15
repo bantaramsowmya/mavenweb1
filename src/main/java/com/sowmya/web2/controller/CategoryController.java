@@ -17,40 +17,40 @@ import com.sowmya.web2.model.Category;
 public class CategoryController 
 {
 	@Autowired
-	CategoryDao cDao;
+	CategoryDao categoryDao;
 	@RequestMapping("/category")
 public ModelAndView m3()
 {
-	ModelAndView mv=new ModelAndView("showcategory","cat",new Category());
-	List catList=cDao.getAllCategory();
-	mv.addObject("categoryinfo",catList);
-	return mv;
+	ModelAndView modelAndView=new ModelAndView("showcategory","cat",new Category());
+	List catList=categoryDao.getAllCategory();
+	modelAndView.addObject("categoryinfo",catList);
+	return modelAndView;
 }
 @RequestMapping(value="/addCategory",method=RequestMethod.POST)
 public ModelAndView saveCategory(@ModelAttribute("cat") Category cat)
 {
-	cDao.insert(cat);
-	List catList=cDao.getAllCategory();
-	ModelAndView mv=new ModelAndView("showcategory","categoryinfo",catList);
-	return mv;
+	categoryDao.insert(cat);
+	List catList=categoryDao.getAllCategory();
+	ModelAndView modelAndView=new ModelAndView("showcategory","categoryinfo",catList);
+	return modelAndView;
 }
 @RequestMapping("/deletecat")
 public ModelAndView deleteCategrory(@RequestParam("catid") int categoryId)
 {
-	cDao.deleteCategory(categoryId);
-	List catList=cDao.getAllCategory();
-	ModelAndView mv=new ModelAndView("showcategory","cat",new Category());
-	mv.addObject("categoryinfo",catList);
-return mv;
+	categoryDao.deleteCategory(categoryId);
+	List catList=categoryDao.getAllCategory();
+	ModelAndView modelAndView=new ModelAndView("showcategory","cat",new Category());
+	modelAndView.addObject("categoryinfo",catList);
+return modelAndView;
 }
 @RequestMapping("/editcat")
 public ModelAndView editCategory(@RequestParam("catid") int categoryId)
 {
-	Category category=cDao.editCategory(categoryId);
-	List catList=cDao.getAllCategory();
+	Category category=categoryDao.editCategory(categoryId);
+	List catList=categoryDao.getAllCategory();
 	
-	ModelAndView mv=new ModelAndView("showcategory","cat",category);
-	mv.addObject("categoryinfo",catList);
-	return mv;
+	ModelAndView modelAndView=new ModelAndView("showcategory","cat",category);
+	modelAndView.addObject("categoryinfo",catList);
+	return modelAndView;
 }
 }

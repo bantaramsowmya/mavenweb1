@@ -1,5 +1,6 @@
 package com.sowmya.web2.controller;
 
+import java.math.BigInteger;
 import java.util.Collection;
 
 import javax.servlet.http.HttpSession;
@@ -13,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sowmya.web2.dao.AuthenticationDao;
+import com.sowmya.web2.dao.CartDao;
 import com.sowmya.web2.model.Register;
 
 @Controller
 public class LoginController 
 {
+	@Autowired
+	CartDao cartDao;
 	@RequestMapping("/Login")
 	public ModelAndView goLogin()
 	{
@@ -64,7 +68,9 @@ public class LoginController
 	                 session.setAttribute("uname", user.getUserName());
 	             page="/Home";
 	                 session.setAttribute("test",1);
-	                
+	                 BigInteger r=(BigInteger) cartDao.noOfrows(userName);
+	             	session.setAttribute("rows", r);
+
 	             }
 	             else
 	             {

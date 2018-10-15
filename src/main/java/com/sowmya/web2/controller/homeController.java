@@ -14,16 +14,16 @@ import com.sowmya.web2.model.Product;
 public class homeController 
 {
 	@Autowired
-	ProductDao pdao;
+	ProductDao productDao;
 
 	@RequestMapping("/uh")
 	public ModelAndView m1()
 	{
 
-		ModelAndView mv=new ModelAndView("userhome","pro",new Product());
-		List proList=pdao.getAllProducts();
-		mv.addObject("productInfo",proList);
-		return mv;
+		ModelAndView modelAndView=new ModelAndView("userhome","pro",new Product());
+		List proList=productDao.getAllProducts();
+		modelAndView.addObject("productInfo",proList);
+		return modelAndView;
 	}
 	@RequestMapping("/admin")
 	String m2()
@@ -31,16 +31,4 @@ public class homeController
 		
 		return "admin";
 	}
-	@RequestMapping("/showmoredetails")
-	public ModelAndView showMoreDetails(@RequestParam("proid") int productId)
-	{
-		Product product=pdao.showMoreDetails(productId);
-	
-		ModelAndView mv=new ModelAndView("showmoredetails","pro",product);
-	
-		
-	
-		
-		return mv;
 	}
-}

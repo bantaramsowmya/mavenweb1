@@ -22,23 +22,23 @@ import com.sowmya.web2.model.Register;
 public class AuthenticationController 
 {
 @Autowired
-AuthenticationDao aDao;
+AuthenticationDao authenticationDao;
 @Autowired
-ProductDao pdao;
+ProductDao productDao;
 @RequestMapping("/Register")
 public ModelAndView m1() 
 {
-	ModelAndView mv=new ModelAndView("Register","reg",new Register());
-	return mv;
+	ModelAndView modelandview=new ModelAndView("Register","reg",new Register());
+	return modelandview;
 }
 @RequestMapping("/Register1")
 public ModelAndView insertRegister(@ModelAttribute("reg") Register reg)
 {
-	boolean result=aDao.insertRegisterDetails(reg);
-	List proList=pdao.getAllProducts();
-	ModelAndView mv=new ModelAndView("userhome","productInfo",proList);
-	mv.addObject("regresult",result);
-	return mv;
+	boolean result=authenticationDao.insertRegisterDetails(reg);
+	List proList=productDao.getAllProducts();
+	ModelAndView modelAndView=new ModelAndView("userhome","productInfo",proList);
+	modelAndView.addObject("regresult",result);
+	return modelAndView;
 }
 //@RequestMapping("/Login")
 public ModelAndView m2()
@@ -49,14 +49,11 @@ public ModelAndView m2()
 //@RequestMapping("/Login1")
 public ModelAndView insertLogin(@RequestParam("em") String email,@RequestParam("pwd") String passWord)
 {
-	boolean result=aDao.login(email, passWord);
+	boolean result=authenticationDao.login(email, passWord);
 	
 	System.out.println(result);
-	List proList=pdao.getAllProducts();
-	ModelAndView mv=new ModelAndView("userhome","productInfo",proList);
-	return mv;
+	List proList=productDao.getAllProducts();
+	ModelAndView modelAndView=new ModelAndView("userhome","productInfo",proList);
+	return modelAndView;
 }
-
-
-
 }

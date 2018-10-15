@@ -17,8 +17,6 @@ public class ProductDaoImpl implements ProductDao
 {
 	@Autowired
 	SessionFactory sessionFactory;
-	
-
 	@Override
 	public boolean insert(Product product) 
 	{
@@ -38,11 +36,9 @@ public class ProductDaoImpl implements ProductDao
 	Session session=sessionFactory.openSession();
 	Query query=session.createQuery("from Product");
 	List productList=query.list();
-		return productList;
-		
+	session.close();
+		return productList;	
 	}
-
-
 	@Override
 	public boolean deleteProduct(int productId) 
 	{
@@ -61,13 +57,12 @@ public class ProductDaoImpl implements ProductDao
 			return false;
 		}
 	}
-
-
 	@Override
 	public Product editProduct(int productId) 
 	{
 		Session session=sessionFactory.openSession();
 		Product product=(Product)session.get(Product.class,productId);
+		session.close();
 		return product;
 	}
 
@@ -76,7 +71,7 @@ public class ProductDaoImpl implements ProductDao
 	public Product showMoreDetails(int productId) {
 		Session session=sessionFactory.openSession();
 		Product product=(Product)session.get(Product.class,productId);
-		
+		session.close();
 		return product;
 	}
 

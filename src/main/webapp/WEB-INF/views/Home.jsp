@@ -14,6 +14,7 @@
 
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
 <div class="container mt-3">
@@ -31,13 +32,13 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="resources/pic1.jpg" alt="Los Angeles" width="700" height="500">
+      <img src="resources/pic1.jpg" alt="Los Angeles" width="900" height="500">
     </div>
     <div class="carousel-item">
-      <img src="resources/pic2.jpg" alt="Chicago" width="700" height="500">
+      <img src="resources/pic2.jpg" alt="Chicago" width="900" height="500">
     </div>
     <div class="carousel-item">
-      <img src="resources/pic3.jpg" alt="New York" width="700" height="500">
+      <img src="resources/pic3.jpg" alt="New York" width="900" height="500">
     </div>
   </div>
   

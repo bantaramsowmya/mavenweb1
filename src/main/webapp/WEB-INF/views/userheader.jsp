@@ -1,3 +1,4 @@
+<%@page import="java.math.BigInteger"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -14,10 +15,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">Logo</a>
 
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="#">Logo</a>
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -29,6 +29,8 @@
 <li class="nav-item">
       <a class="nav-link" href="Login">Login</a> 
     </li>
+        <% BigInteger r=(BigInteger)session.getAttribute("rows");
+    out.print(r); %>
     <li class="nav-item">
       <a class="nav-link" href="cart1"><img src="resources/cart.jpg"  style="width:30px;height:30px;"></a> 
     </li>

@@ -1,7 +1,4 @@
 package com.sowmya.web2.dao;
-
-
-
 import com.sowmya.web2.model.Register;
 
 public interface AuthenticationDao 

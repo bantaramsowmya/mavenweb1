@@ -1,5 +1,6 @@
 package com.sowmya.web2.controller;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -18,31 +19,29 @@ import com.sowmya.web2.model.Cart;
 public class CartController 
 {
 @Autowired
-CartDao cDao;
+CartDao cartDao;
 @Autowired
-ProductDao pdao;
+ProductDao productDao;
 @Autowired
 HttpSession session;
 @RequestMapping("/addtocart")
-public ModelAndView insert(@RequestParam("productId") int productId,@RequestParam("quantity") int quantity,String username)
+public ModelAndView insert(@RequestParam("productId") int productId,@RequestParam("quantity") int quantity)
 {
 	
-	String un=(String) session.getAttribute("uname");
-	cDao.insertCart(productId, quantity, un);
-	List proList=pdao.getAllProducts();
-	ModelAndView mv=new ModelAndView("userhome","productInfo",proList);
-	return mv;
+	String username=(String) session.getAttribute("uname");
+	cartDao.insertCart(productId, quantity, username);
+	List proList=productDao.getAllProducts();
+	ModelAndView modelAndView=new ModelAndView("userhome","productInfo",proList);
+	return modelAndView;
 	
 }
 @RequestMapping("/cart1")
 public ModelAndView cartDetails()
 {
-	String un=(String) session.getAttribute("uname");
-	List cartList=cDao.getAllCartDetails(un);
-	ModelAndView mv=new ModelAndView("cart","cartinfo",cartList);
-	return mv;
+	String username=(String) session.getAttribute("uname");
+	List cartList=cartDao.getAllCartDetails(username);
+	ModelAndView modelAndView=new ModelAndView("cart","cartinfo",cartList);
+		return modelAndView;
 }
 
-	
 }
-

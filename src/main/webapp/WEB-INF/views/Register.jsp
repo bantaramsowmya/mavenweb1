@@ -2,17 +2,18 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://www.springframework.org/tags/form"  prefix="sptags"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core" %>
+    <%@ include file="userheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="bg-secondary text-white">
 <core:if test="${regresult}">
 <h1> Registration sucess</h1>
 </core:if>
-<sptags:form class="form-horizontal" action="Register1" method="post" commandName="reg">
+<sptags:form class="form-horizontal" action="Register1" method="post" commandName="reg" name="register" onsubmit="return display()">
 <div class="form-group">
       <label class="control-label col-sm-2" for="userName">userName:</label>
       <div class="col-sm-10">          
@@ -56,5 +57,21 @@
     </div>
    
 </sptags:form>
+<script >
+function display() 
+{
+	var username=document.register.userName.value;
+	var password=document.register.passWord.value;
+	if(username.length>6&&password.length>6)
+		{
+		return true;
+		}
+	else
+		{
+		alert("username and password should contain atleast 7 characters");
+		return false;
+		}
+}
+	</script>
 </body>
 </html>
