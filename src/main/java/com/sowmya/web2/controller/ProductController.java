@@ -54,11 +54,13 @@ public ModelAndView productList()
 		int  id=(int)(Math.random()*100000);
 		pro.setProductId(id);
 		productDao.insert(pro);
-		File f=new File("D://workspace\\mavenweb1\\src\\main\\webapp\\resources\\"+String.valueOf(id)+".jpg");
+		File f=new File("D:\\workspace\\mavenweb1\\src\\main\\webapp\\resources\\"+String.valueOf(id)+".jpg");
 		FileOutputStream fos=new FileOutputStream(f);
 		BufferedOutputStream bos=new BufferedOutputStream(fos);
 		
 			bos.write(proImg.getBytes());
+			bos.flush();
+			bos.close();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

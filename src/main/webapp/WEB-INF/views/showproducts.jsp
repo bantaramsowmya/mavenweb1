@@ -20,7 +20,7 @@
 <body>
 
 	<div class="container">
-		<h2>Horizontal form</h2>
+		<h2>Products form</h2>
 		<sptags:form class="form-horizontal" action="addProduct" method="post"
 			commandName="pro" enctype="multipart/form-data">
 			<div class="form-group">

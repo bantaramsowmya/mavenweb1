@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ include file="userheader.jsp" %>
     
 <!DOCTYPE html>
 <html>
@@ -31,14 +32,14 @@ p1{font-size:20px;}
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6">
-        <img src="resources/${pro.productId }.jpg" alt="abc" style="width:300px;height:300px;">
+        <img src="resources/${pro.productId }.jpg" alt="abc" style="width:400px;height:400px;">
 <form action="addtocart">
 <input type="hidden" name="productId" value="${pro.productId }">
 <p1>quantity<input path="text" name="quantity" > </p1>
 <input type="submit" value="addtocart">
 </form>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" >
     <h>Specifications:</h>
     <p>Id:${pro.productId }<br>
         Name:${pro.productName }<br>

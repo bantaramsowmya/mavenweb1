@@ -15,7 +15,7 @@
 <body>
 
 <div class="container">
-  <h2>Horizontal form</h2>
+  <h2>Supplier form</h2>
   <sptags:form class="form-horizontal" action="addSupplier" method="post" commandName="sup" >
     
     <div class="form-group">

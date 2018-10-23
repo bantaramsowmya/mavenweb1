@@ -13,21 +13,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+p{font-size: 15px;
+}
+</style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-<a class="navbar-brand" href="#">Logo</a>
+<a class="navbar-brand" href="#"><image src="resources/jewellery.jpg" style="width:30px;height:30px"></a>
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="uh.html">products</a>
+      <a class="nav-link" href="uh.html"><p>products</p></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Register.html">Register</a>
+      <a class="nav-link" href="Register.html"><p>Register</p></a>
     </li>
 <li class="nav-item">
-      <a class="nav-link" href="Login">Login</a> 
+      <a class="nav-link" href="Login"><p>Login</p></a> 
     </li>
         <% BigInteger r=(BigInteger)session.getAttribute("rows");
     out.print(r); %>
@@ -35,7 +39,7 @@
       <a class="nav-link" href="cart1"><img src="resources/cart.jpg"  style="width:30px;height:30px;"></a> 
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="perform_logout">Logout</a>
+      <a class="nav-link" href="perform_logout"><p>Logout</p></a>
       
     </li>
     
