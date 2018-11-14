@@ -5,6 +5,6 @@ public interface AuthenticationDao
 {
 boolean insertRegisterDetails(Register register);
 boolean login(String email,String passWord );
-
 Register getUser(String userId);
+
 }

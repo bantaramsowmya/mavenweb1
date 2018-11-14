@@ -56,6 +56,7 @@
         
 </jscore:forEach>
 payableAmount=${payableAmount }
+
     </tbody>
   </table>
 </div>
@@ -65,8 +66,8 @@ payableAmount=${payableAmount }
 </form>
 </div>
 <div class="col-sm-6">
-<form action="" method="post">
-<input type="submit" value="ConfirmOrder">
+<form action="confirmorder" method="post">
+<input type="submit" value="confirmorder">
 </form>
 </div>
 </body>

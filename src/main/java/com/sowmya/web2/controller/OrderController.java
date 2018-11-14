@@ -28,4 +28,12 @@ public ModelAndView cancelOrder(HttpSession httpSession)
 	ModelAndView modelAndView=new ModelAndView("cart");
 	return modelAndView;
 }
+@RequestMapping("/confirmorder")
+public ModelAndView confirmOrder(HttpSession httpSession)
+{
+	String s1=(String)httpSession.getAttribute("uname");
+	String address=orderdao.confirmorder(s1);
+	ModelAndView modelAndView=new ModelAndView("confirmorder","conorder",address);
+	return modelAndView;
+}
 }

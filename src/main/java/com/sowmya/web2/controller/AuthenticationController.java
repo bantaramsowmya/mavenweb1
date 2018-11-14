@@ -56,4 +56,5 @@ public ModelAndView insertLogin(@RequestParam("em") String email,@RequestParam("
 	ModelAndView modelAndView=new ModelAndView("userhome","productInfo",proList);
 	return modelAndView;
 }
+
 }

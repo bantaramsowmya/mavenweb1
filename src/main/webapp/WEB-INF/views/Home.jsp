@@ -20,7 +20,7 @@
 <div class="container mt-3">
 
 <h2>Jewellery</h2>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000" data-keyboard="true" data-pause="hover" data-wrap="false">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000" data-keyboard="true">
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
@@ -32,13 +32,13 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="resources/pic1.jpg" alt="Los Angeles" width="900" height="500">
+      <img src="resources/pic1.jpg" alt="Los Angeles" width="500" height="300">
     </div>
     <div class="carousel-item">
-      <img src="resources/pic2.jpg" alt="Chicago" width="900" height="500">
+      <img src="resources/pic2.jpg" alt="Chicago" width="500" height="300">
     </div>
     <div class="carousel-item">
-      <img src="resources/pic3.jpg" alt="New York" width="900" height="500">
+      <img src="resources/pic3.jpg" alt="New York" width="500" height="300">
     </div>
   </div>
   

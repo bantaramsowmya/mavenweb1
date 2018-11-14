@@ -26,5 +26,15 @@ public class OrderDaoImpl implements OrderDao
 		session.close();
 		return true;
 	}
+	@Override
+	public String confirmorder(String userName) 
+	{
+	Session session=sessionfactory.openSession();
+	Query query=session.createQuery("select address from Register where userName=:uname");
+		query.setParameter("uname",userName);
+		String s=(String)query.uniqueResult();
+		session.close();
+	return s;
+	}
 
 }

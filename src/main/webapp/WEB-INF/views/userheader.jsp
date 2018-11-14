@@ -1,6 +1,7 @@
 <%@page import="java.math.BigInteger"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jscore" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,17 +31,21 @@ p{font-size: 15px;
     <li class="nav-item">
       <a class="nav-link" href="Register.html"><p>Register</p></a>
     </li>
+   
 <li class="nav-item">
       <a class="nav-link" href="Login"><p>Login</p></a> 
     </li>
+        
+    
         <% BigInteger r=(BigInteger)session.getAttribute("rows");
     out.print(r); %>
     <li class="nav-item">
       <a class="nav-link" href="cart1"><img src="resources/cart.jpg"  style="width:30px;height:30px;"></a> 
     </li>
+    <jscore:if test="${LoggedIn}">
     <li class="nav-item">
       <a class="nav-link" href="perform_logout"><p>Logout</p></a>
-      
+      </jscore:if>
     </li>
     
      </ul>

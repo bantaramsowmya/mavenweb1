@@ -52,6 +52,8 @@ public class LoginController
 	        session.setAttribute("name", user.getPassWord());
 	        
 	        session.setAttribute("LoggedIn", "true");
+	        session.setAttribute("LoggedOut", "false");
+	      
 	        
 	        
 	         //session.setAttribute("cartcnt",count);

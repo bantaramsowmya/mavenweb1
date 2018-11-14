@@ -19,7 +19,7 @@ public class CategoryController
 	@Autowired
 	CategoryDao categoryDao;
 	@RequestMapping("/category")
-public ModelAndView m3()
+public ModelAndView categoryList()
 {
 	ModelAndView modelAndView=new ModelAndView("showcategory","cat",new Category());
 	List catList=categoryDao.getAllCategory();

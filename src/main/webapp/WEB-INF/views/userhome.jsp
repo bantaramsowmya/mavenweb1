@@ -24,38 +24,26 @@
   <table class="table table-bordered table-sm">
    <thead class="thead-dark">
       <tr>
-        <th>productId</th>
-        <th>productName</th>
-        <th>productPrice</th>
-        <th>productDescription</th>
-        <th>productCategory</th>
-        <th>productSupplierName</th>
-        <th>image</th>
-        
-        
+      <th>Products</th>
       </tr>
     </thead>
     <tbody>
       <jscore:forEach items="${productInfo }" var="p">
       <tr class="table-primary">
-     
-        <td>${p.productId }</td>
-        <td>${p.productName }</td>
-        <td>${p.productPrice }</td>
-        <td>${p.productDescription }</td>
-        
-        <td>${p.productCategory }</td>
-        <td>${p.productSupplierName }</td>
-        <td><a href="showmoredetails?proid=${p.productId }"><img src="resources/${p.productId }.jpg" alt="abc" style="width:75px;height:75px;"></a></td>
-        
-         
+      
+        <td><div class="row"><div class="col-sm-3" ><a href="showmoredetails?proid=${p.productId }"><img src="resources/${p.productId }.jpg" alt="abc" style="width:170px;height:170px;"></a></div>
+       <div class="col-sm-3">ProductId : ${p.productId }<br>
+        ProductName : ${p.productName }<br>
+        ProductPrice : ${p.productPrice }<br>
+        ProductDescription : ${p.productDescription }<br>
+        ProductCategory : ${p.productCategory }<br>
+        ProductSupplier : ${p.productSupplierName }</div></div>
+        </td>
+
       </tr>
 </jscore:forEach>
     </tbody>
-  </table>
+  </table>>
 </div>
- 
- 
-
 </body>
 </html>

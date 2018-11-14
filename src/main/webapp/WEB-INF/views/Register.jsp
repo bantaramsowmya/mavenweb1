@@ -29,7 +29,7 @@
 <div class="form-group">
       <label class="control-label col-sm-2" for="email">email:</label>
       <div class="col-sm-10">          
-        <sptags:input path="email" class="form-control"  placeholder="Enter email" />
+        <sptags:input path="email" class="form-control" type="email" placeholder="Enter email" />
       </div>
     </div>
     <div class="form-group">
@@ -62,13 +62,14 @@ function display()
 {
 	var username=document.register.userName.value;
 	var password=document.register.passWord.value;
-	if(username.length>6&&password.length>6)
+	var moblieno=document.register.mobileNo.value;
+	if(username.length>6&&password.length>6&&mobileno.length==10)
 		{
 		return true;
 		}
 	else
 		{
-		alert("username and password should contain atleast 7 characters");
+		alert("username and password should contain atleast 7 characters and mobileno should contain 10 num");
 		return false;
 		}
 }
